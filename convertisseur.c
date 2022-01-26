@@ -10,7 +10,7 @@ void conversion();
 
 int main() {
 
-division();
+conversion();
 
 return 0;
 }
@@ -158,5 +158,44 @@ scanf("%f", &nbre2);
 }
 
 void conversion() {
-    
+
+int choix;
+float montant, resultat;
+float tx_cfa_euro = 0.0015;
+float tx_euro_cfa = 654.49;
+float tx_cfa_dollar = 0.0017;
+float tx_dollar_cfa = 579.50;
+
+
+    printf("--------------BIENVENU DANS LE PROGRAMME DE CONVERSION DE DEVISES--------------\n\n");
+    printf("MERCI DE FAIRE UN CHOIX\n\n");
+    printf("Saisissez le chiffre correspond a votre choix\n\n");
+    printf(" 1-CONVERSION FCFA --> EURO\n 2-CONVERSION EURO --> FCFA \n 3-CONVERSION FCFA --> DOLLAR US\n 4-CONVERSION DOLLAR US--> FCFA \n");
+
+    scanf("%f", &choix);
+
+    printf("Saisissez le montant a convertir : \n");
+    scanf("%f", &montant);
+
+    switch(choix){
+
+        case 1:
+            resultat = montant * tx_cfa_euro;
+            printf("%f Fcfa = %f Euro", &montant, &resultat);
+            break;
+        case 2:
+            resultat = montant * tx_euro_cfa;
+            printf("%f Euro = %f Fcfa", &montant, &resultat);
+            break;
+        case 3:
+            resultat = montant * tx_cfa_dollar;
+            printf("%f Fcfa = %f Dollar US", &montant, &resultat);
+            break;
+        case 4:
+            resultat = montant * tx_dollar_cfa;
+            printf("%f Dollar US = %f Fcfa", &montant, &resultat);
+            break;
+        default:
+            printf("Choix incorrect- Merci de chosir entre 1,2,3 & 4. \n");
+    }
 }

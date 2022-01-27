@@ -206,7 +206,6 @@ float tx_dollar_cfa = 580.50;
 void calculette(){
     
         int choice;
-        char response;
 
             printf("---------------------------BIENVENU SUR LA CALCULETTE SHADOW-------------------------------------\n\n");
             printf("NB: Pour saisir un nombre decimal, veuillez utiliser un point au lieu de la virgule.\n\n");

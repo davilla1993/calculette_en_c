@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <math.h>
 
 void addition();
@@ -59,7 +60,7 @@ if(taille <= 10){
             somme += tableau_de_nombres[i];
         }
 
-        printf("Somme totale = %.2f", somme);
+        printf("Somme totale = %.2f \n", somme);
     } 
 }
 
@@ -205,6 +206,7 @@ float tx_dollar_cfa = 580.50;
 void calculette(){
     
         int choice;
+        char response;
 
             printf("---------------------------BIENVENU SUR LA CALCULETTE SHADOW-------------------------------------\n\n");
             printf("NB: Pour saisir un nombre decimal, veuillez utiliser un point au lieu de la virgule.\n\n");
@@ -234,4 +236,5 @@ void calculette(){
                 printf("ERREUR - Choix incorrect - Merci de reexecuter le programme si vous voulez faire une autre operation. \n\n");
                 break;
             }
+
 }

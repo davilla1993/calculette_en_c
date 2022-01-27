@@ -7,12 +7,14 @@ void soustraction();
 void multiplication();
 void division();
 void conversion();
+void calculette();
 
 int main() {
 
-conversion();
+    calculette();
 
 return 0;
+
 }
 
 void addition(){
@@ -68,10 +70,10 @@ int choix;
 
 printf("-------------------------------PROGRAMME DE SOUSTRACTION--------------------------------------\n\n");
 
-printf("Saisir le premier nombre : \n");
+printf("Saisir le premier nombre \n : ");
 scanf("%f", &nbre1);
 
-printf("Saisir le deuxieme nombre : \n");
+printf("Saisir le deuxieme nombre \n : ");
 scanf("%f", &nbre2);
 
 reste = nbre1 - nbre2;
@@ -111,7 +113,7 @@ if(taille <= 5){
 
         for(int i=0; i<taille; i++){
 
-            printf("Saisir le nombre %d\n :", i+1);
+            printf("Saisir le nombre %d : \n ", i+1);
             scanf("%f", &tableau_de_nombres[i]);
         }
 
@@ -130,10 +132,10 @@ int choix;
  
 printf("-----------------------PROGRAMME DE DIVISION----------------------------- \n\n");
 
-printf("Saisissez le premier nombre : \n");
+printf("Saisissez le premier nombre \n : ");
 scanf("%f", &nbre1);
 
-printf("Saisissez le deuxieme nombre : \n");
+printf("Saisissez le deuxieme nombre \n : ");
 scanf("%f", &nbre2);
 
     while(nbre2 == 0){
@@ -143,7 +145,7 @@ scanf("%f", &nbre2);
         scanf("%d", &choix);
 
         if(choix == 1){
-            printf("Saisissez le deuxieme nombre : \n");
+            printf("Saisissez le deuxieme nombre \n : ");
             scanf("%f", &nbre2);
         }else{
             printf("AUREVOIR !!!!!"); 
@@ -164,38 +166,72 @@ float montant, resultat;
 float tx_cfa_euro = 0.0015;
 float tx_euro_cfa = 654.49;
 float tx_cfa_dollar = 0.0017;
-float tx_dollar_cfa = 579.50;
-
+float tx_dollar_cfa = 580.50;
 
     printf("--------------BIENVENU DANS LE PROGRAMME DE CONVERSION DE DEVISES--------------\n\n");
-    printf("MERCI DE FAIRE UN CHOIX\n\n");
-    printf("Saisissez le chiffre correspond a votre choix\n\n");
-    printf(" 1-CONVERSION FCFA --> EURO\n 2-CONVERSION EURO --> FCFA \n 3-CONVERSION FCFA --> DOLLAR US\n 4-CONVERSION DOLLAR US--> FCFA \n");
 
-    scanf("%f", &choix);
+    printf("Saisissez le chiffre correspondant a votre choix\n\n");
 
-    printf("Saisissez le montant a convertir : \n");
+    printf(" 1-CONVERSION FCFA --> EURO\n 2-CONVERSION EURO --> FCFA \n 3-CONVERSION FCFA --> DOLLAR US\n 4-CONVERSION DOLLAR US--> FCFA \n\n");
+    scanf("%d", &choix);
+
+    printf("Saisissez le montant a convertir(uniquement le montant, pas la devise) \n : ");
     scanf("%f", &montant);
 
     switch(choix){
 
         case 1:
             resultat = montant * tx_cfa_euro;
-            printf("%f Fcfa = %f Euro", &montant, &resultat);
+            printf("%.2f Fcfa = %.2f Euro\n\n", montant, resultat);
             break;
         case 2:
             resultat = montant * tx_euro_cfa;
-            printf("%f Euro = %f Fcfa", &montant, &resultat);
+            printf("%.2f Euro = %.2f Fcfa\n\n", montant, resultat);
             break;
         case 3:
             resultat = montant * tx_cfa_dollar;
-            printf("%f Fcfa = %f Dollar US", &montant, &resultat);
+            printf("%.2f Fcfa = %.2f DollarUS\n\n", montant, resultat);
             break;
         case 4:
             resultat = montant * tx_dollar_cfa;
-            printf("%f Dollar US = %f Fcfa", &montant, &resultat);
+            printf("%.2f DollarUS = %.2f Fcfa\n\n", montant, resultat);
             break;
         default:
-            printf("Choix incorrect- Merci de chosir entre 1,2,3 & 4. \n");
+            printf("Choix de conersion incorrect - AUREVOIR !!!\n\n\n");
+            
     }
+}
+
+void calculette(){
+    
+        int choice;
+
+            printf("---------------------------BIENVENU SUR LA CALCULETTE SHADOW-------------------------------------\n\n");
+            printf("NB: Pour saisir un nombre decimal, veuillez utiliser un point au lieu de la virgule.\n\n");
+            printf("Quelle operation voulez-vous realiser ? Merci de saisir le nombre correspondant a votre choix.\n\n\n");
+            printf(" 1-ADDITION \n 2-SOUSTRACTION \n 3-PRODUIT \n 4-DIVISION \n 5-CONVERSION DE DEVISES \n\n");
+
+            scanf("%d", &choice);
+
+            switch(choice) {
+            case 1:
+                addition();
+                break;
+            case 2: 
+                soustraction();
+                break;
+            case 3:
+                multiplication();
+                break;
+            case 4:
+                division();
+                break;
+            case 5:
+                conversion();
+                break;
+
+            default:
+                printf("ERREUR - Choix incorrect - Merci de reexecuter le programme si vous voulez faire une autre operation. \n\n");
+                break;
+            }
 }
